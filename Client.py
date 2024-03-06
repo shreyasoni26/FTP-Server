@@ -2,6 +2,7 @@ import socket
 import sys
 import os
 import struct
+import ssl
 
 # Initialise socket 
 ip=input("Enter server ip: ")

@@ -4,12 +4,13 @@ import time
 import os
 import struct
 import threading
+import ssl
 print( "\nWelcome to the FTP server.\n\nTo get started, connect a client.")
 
 
  
 # Initialise socket stuff
-#TCP_IP = "127.0.0.1" # Only a local server
+#TCP_IP = "127.0.0.1" # Only a local serverp
 TCP_PORT = 1456 # Just a random choice
 BUFFER_SIZE = 1048 # Standard size
 
@@ -131,7 +132,6 @@ def delf(conn, addr):
             conn.send(struct.pack("i", -1))
     else:
         # User abandoned deletion
-        # The server probably recieved "N", but else used as a safety catch-all
         print("Delete abandoned by client!")
         return
 
